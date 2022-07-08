@@ -39,7 +39,7 @@ describe('DayCare', () => {
     it('should not add a child if already at capacity', () => {
       const dayCare = new DayCare();
       const child = new Child('Alice', 4);
-      const mock = jest.spyOn();
+      const mock = jest.spyOn(console, 'log');
       mock.mockImplementation();
       dayCare.children = [
         new Child('Tammy', 1),

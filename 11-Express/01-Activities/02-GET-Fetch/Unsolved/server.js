@@ -18,10 +18,6 @@ app.get('/', (req, res) => {
 
 app.get('/api/pets', (req, res) => res.json(petData));
 
-app.get('/api/pets/walter', (res, req) => res.json((petData.find(pet => pet.name === "walter"))))
-
 app.listen(PORT, () => {
   console.log(`Example app listening at http://localhost:${PORT}`);
 });
-
-

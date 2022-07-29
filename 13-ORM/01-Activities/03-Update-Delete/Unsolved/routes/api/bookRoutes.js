@@ -2,10 +2,18 @@ const router = require('express').Router();
 const Book = require('../../models/Book');
 
 // TODO finish the PUT route to UPDATE a book in the database with a matching book_id
-router.put('/:book_id', (req, res) => {});
+router.put('/:book_id', (req, res) => {
+  Book.update({...req.body}, {where:{book_id:req.params.book_id}})
+  .then((updatedBook) => {
+    res.json(updatedBook)
+  })
+});
 
 // TODO finish the DELETE route to DELETE a book in the database with a matching book_id
-router.delete('/:book_id', (req, res) => {});
+router.delete('/:book_id', (req, res) => {
+
+  res.send()
+});
 
 router.post('/seed', (req, res) => {
   Book.bulkCreate([
